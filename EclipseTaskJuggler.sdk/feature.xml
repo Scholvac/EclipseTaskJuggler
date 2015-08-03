@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="EclipseTaskJuggler.sdk"
+         label="Eclipse Task Juggler Feature"
+         version="0.1.0.qualifier"
+         provider-name="sos">
+    
+   <description>
+      Eclipse Task Juggler
+   </description>
+
+   <copyright url="http://www.mycompany.com">
+      Copyright (C) 2013 sos. All rights reserved.
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+    
+    <plugin
+            id="EclipseTaskJuggler.dsl"
+            download-size="0"
+            install-size="0"
+            version="0.1.0.qualifier"
+            unpack="false"/>
+    
+    <plugin
+            id="EclipseTaskJuggler.ui"
+            download-size="0"
+            install-size="0"
+            version="0.1.0.qualifier"
+            unpack="false"/>
+            
+</feature>

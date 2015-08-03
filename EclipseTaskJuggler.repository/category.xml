@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="EclipseTaskJuggler.sdk" version="0.1.0.qualifier">
+      <category name="de.sos.etj.category"/>
+   </feature>
+   <category-def name="de.sos.etj.category" label="Eclipse Task Juggler">
+      <description>
+         Eclipse Task Juggler
+      </description>
+   </category-def>
+</site>

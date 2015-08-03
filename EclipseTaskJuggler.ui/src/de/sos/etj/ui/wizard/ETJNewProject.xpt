@@ -1,0 +1,14 @@
+«IMPORT de::sos::etj::ui::wizard»
+
+«DEFINE main FOR ETJProjectInfo»
+«EXPAND model FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR ETJProjectInfo»
+«FILE "src/model/Model.etj"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»

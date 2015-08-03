@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="EclipseTaskJuggler.builder"
+         name="Eclipse Task Juggler Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true"
+            callOnEmptyDelta="true"
+            >
+         <run
+               class="de.sos.etj.builder.EclipseTaskJugglerBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="TaskJugglerNature"
+         name="Task Juggler Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="de.sos.etj.builder.TaskJugglerNature">
+         </run>
+      </runtime>
+      <builder
+            id="EclipseTaskJuggler.builder">
+      </builder>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Task Juggler Project Nature commands"
+            id="EclipseTaskJuggler.builder.TaskJugglerNature.category">
+      </category>
+      <command
+            name="Add/RemoveTask Juggler Project Nature"
+            defaultHandler="de.sos.etj.builder.AddRemoveTaskJugglerNatureHandler"
+            categoryId="EclipseTaskJuggler.builder.TaskJugglerNature.category"
+            id="EclipseTaskJuggler.builder.addRemoveTaskJugglerNature">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.projectConfigure?after=additions">
+         <command
+               commandId="EclipseTaskJuggler.builder.addRemoveTaskJugglerNature"
+               label="Disable Task Juggler Builder"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IProject">
+                        <test
+                              value="EclipseTaskJuggler.builder.TaskJugglerNature"
+                              property="org.eclipse.core.resources.projectNature">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="EclipseTaskJuggler.builder.addRemoveTaskJugglerNature"
+               label="Enable Task Juggler Builder"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IProject">
+                        <not>
+                           <test
+                                 value="EclipseTaskJuggler.builder.TaskJugglerNature"
+                                 property="org.eclipse.core.resources.projectNature">
+                           </test>
+                        </not>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+</plugin>
