@@ -1,2 +1,27 @@
 # EclipseTaskJuggler
-an XText based editor for Task Juggler
+an XText based editor for TaskJuggler3 
+
+This project provides an eclipse editor for the command line tool TaskJuggler ({}Homepage}[http://www.taskjuggler.org/]  {GitHub Page}[https://github.com/taskjuggler/TaskJuggler]). 
+
+
+= Usage
+- Install TaskJuggler (and add the tjp3 file to your path)
+- Create a new Project using the "New" Wizard
+- Create a *.tjp file. If asked to add the XText nature, click "Yes"
+- Fill in your project plan (may have a look to the {TaskJuggler Tutorial}[http://www.taskjuggler.org/tj3/manual/Tutorial.html])
+- Enable the "TaskJuggler Builder" by Right Click onto the project -> Configure -> Enable TaskJuggler Builder (changes to "Disable TaskJuggler Builder" if already enabled)
+- Save the *.tjp File
+-- Whenever a *.tjp file is saved, the Builder (if enabled) trys to build the project plan. This is done by calling an automatically generated script file, in a separated Process. Build file as well as the generated report will be created into the subdirectory "reports/[name of the TJP File]. Note: This Directory is cleaned (deleted) every time the project file is saved. After the process has been executed, the workspace is automatically refreshed. Note: The generated Reports will not be refreshed automatically.
+
+= Limitations
+- Keywords used by the TaskJuggler language (allocate, cost, resource, task, ...) can not be used as identifier within the project file 
+- Currently only tested on Windows (7 & 8) and Eclipse 4.4 & 4.5
+- No perfect match between TaskJuggler and XText grammar, thus a file marked to have errors may still compile. On the other hand a file that looks valid within the editor may still got some errors that can not be handled by TaskJuggler. This goes especially for the macros and / or references within text blocks. 
+
+= Installation
+
+The project is build using the Maven build tool, thus it can be imported as an existing maven project. 
+
+
+Note: The initial grammar used in this project has been created by jjfraney in the project tjpeditor (https://github.com/jjfraney/tjpeditor)
+I added some extensions to the grammar, and the automatic builder. 
