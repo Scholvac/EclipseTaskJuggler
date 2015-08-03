@@ -1,7 +1,7 @@
 # EclipseTaskJuggler
 an XText based editor for TaskJuggler3 
 
-This project provides an eclipse editor for the command line tool TaskJuggler ({}Homepage}[http://www.taskjuggler.org/]  {GitHub Page}[https://github.com/taskjuggler/TaskJuggler]). 
+This project provides an eclipse editor for the command line tool TaskJuggler ({Homepage}[http://www.taskjuggler.org/] ;  {GitHub Page}[https://github.com/taskjuggler/TaskJuggler]). 
 
 
 = Usage
